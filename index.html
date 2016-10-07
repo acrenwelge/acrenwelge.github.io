@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>My Portfolio Site</title>
+		<!-- My style sheet -->
+		<link rel="stylesheet" href="main.css"/>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  </head>
+
+<body>
+
+<header>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hidden-menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+				Andrew Crenwelge
+			</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="hidden-menu">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About Me</a></li>
+				<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Portfolio<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#rule1">BSA Service Project</a></li>
+            <li><a href="#rule1">Donut Project</a></li>
+            <li><a href="#rule1">Goblet Project</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#rule1">Seminar Class Presentations</a></li>
+          </ul>
+        </li>
+				<li><a href="#rule2">Contact</a></li>
+				<li><a href="/blog">Blog</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+
+<div id="pg-container" class="container-fluid">
+	<div class="row" id="about">
+		<h1 class="text-center">Development & Design</h1>
+	</div>
+	<div class="row v-align">
+		<div class="col-xs-6">
+				<img src="profile-pic.jpg" alt="Profile picture"/>
+		</div>
+		<div class="col-xs-6">
+			<p>
+				Howdy! I'm Andrew - currently a student at Texas A&amp;M University, majoring in
+				chemical engineering. While in college, I've also developed web development and
+				computer programming skills. Currently my passion for web development and design
+				is only a hobby, but I am also interested in pursuing this field as a career path. I
+				enjoy both engineering and computers, and there is a great deal of overlap
+				between the two subjects: the problem-solving skills I learned in my engineering
+				classes have helped me to solve frustrating programming problems.
+			</p>
+		</div>
+	</div> <!-- end row -->
+	<div class="rule" id="rule1"></div>
+	<h2 class="text-center" id="portfolio">What I've Done Recently</h2>
+	<p>
+		Below are some examples of projects I have worked on or schoolwork I completed,
+		from my seminal Eagle Scout service project, to an interesting math assignment involving
+		donuts (yum!), to my two presentations I gave in one of my major-specific courses.
+	</p>
+	<div class="row portfolio">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+			<img src="BSA-logo.jpg" alt="" data-toggle="project1"/>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+			<img src="donut.png" alt="" data-toggle="project2"/>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+			<img src="Projects/goblet/goblet-photo.jpg" alt="" data-toggle="project3"/>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+			<img src="CNT.png" alt="" data-toggle="project4"/>
+		</div>
+	</div>
+	<div class="row" id="descriptions">
+		<div class="col-xs-12">
+		<p data-toggle="project1">
+			Check out my Eagle Project!
+		</p>
+		<p data-toggle="project2">
+			In this project, I used Maple to minimize the surface area to volume ratio
+			of a donut.
+		</p>
+		<p data-toggle="project3">
+			Here I worked with a partner to design and 3D-print a cup to drink out of.
+		</p>
+		<p data-toggle="project4">
+			Here are two presentations I gave to my class about carbon nanotubes and
+			desalination.
+		</p>
+		</div>
+	</div>
+	 <!-- End portfolio -->
+
+	<div class="rule" id="rule2"></div>
+	<div class="row" id="contact">
+		<h2 class="text-center">Contact Me</h2>
+	</div>
+	<div class="row">
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="name" placeholder="John Smith">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="email" placeholder="email@example.com">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phoneNumber" class="col-sm-2 control-label">Phone Number</label>
+    <div class="col-sm-9">
+      <input type="tel" class="form-control" id="phoneNumber" placeholder="(123)-456-7890">
+    </div>
+  </div>
+<!--   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-9">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <label for="message" class="col-sm-2 control-label">Message</label>
+    <div class="col-sm-9">
+			<textarea class="form-control" rows="5" id="message" placeholder="Message"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-9">
+      <button type="submit" class="btn btn-default">Send</button>
+    </div>
+  </div>
+</form>
+</div> <!-- End contact -->
+
+<div class="rule" id="rule1"></div>
+</div> <!-- End pg-container -->
+
+<footer>
+	<div class="col-xs-12 text-center v-align">
+		Follow me on social media!
+		<ul>
+			<li><a href="">GitHub</a></li>
+			<li><a href="">Facebook</a></li>
+			<li><a href="">Twitter</a></li>
+		</ul>
+	</div>
+</footer>
+
+<!-- Scripts - jQuery, Bootstrap, and my own -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
