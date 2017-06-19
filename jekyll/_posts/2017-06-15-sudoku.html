@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "Sudoku"
+date:   2017-04-05 12:00:00 -0600
+categories: Game
+---
+<p>
+  This pen has been the hardest coding project for me yet! I got the idea of
+  writing a sudoku game that can generate a board and check the user's solution
+  after trying a hard sudoku problem while having lunch with my math professor, Dr. Yasskin.
+  <!--end excerpt-->
+</p>
+<p>
+  I began by writing the HTML and CSS to display the board, which is organized
+  into 3 horizontal rows which each contain 3 squares, which each contain 9 cells.
+  There is also a bar of numbers below the board which can be used to insert
+  numbers into the board.
+</p>
+<p>
+  After the UI was built to my satisfaction, I started thinking about the board
+  generation code. I decided to represent the board as a 2D array (although
+  later I realized I could have simply used a 1D array). I generated the board
+  randomly by taking a solved board (it could be a very simple board, like
+  [1 2 3 ...etc]) and permuting the row groups, column groups, and the rows
+  and columns within each group. This jumbles the board but ensures it remains
+  valid. Then, I wrote a function to randomly mask 5 cells in each square.
+</p>
+<p>
+  Now came the hard part: writing the board solver function. I actually ended
+  up writing two different solver functions, one as a brute force algorithm
+  and one as a "smarter" algorithm.
+</p>
+<p>
+  The brute force method starts with a 1 in the first open cell and checks for
+  validity in ascending numerical order before moving onto the next open cell.
+  If no number is valid for the cell, it retreats to the previous cell and
+  increments the cell value. As you can imagine, this takes a long time for
+  certain board configurations, but at least it guarantees to find a solution
+  if one exists. The "smarter" algorithm uses essentially the same method, but
+  it first eliminates some of the solution board possibilities by checking the
+  adjacent row, square, and column cells for each cell.
+</p>
+<p>
+  Finally, after many strenuous hours of debugging, my project was finished:
+</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="bqybpv" data-default-tab="js,result" data-user="acrenwelge" data-embed-version="2" data-pen-title="Dynamic Sudoku" class="codepen">
+  See the Pen <a href="https://codepen.io/acrenwelge/pen/bqybpv/">Dynamic Sudoku</a> by Andrew (<a href="https://codepen.io/acrenwelge">@acrenwelge</a>) on <a href="https://codepen.io">CodePen</a>.
+</p>

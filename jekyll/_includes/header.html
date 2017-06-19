@@ -8,27 +8,27 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
-				Andrew Crenwelge
+      <a class="navbar-brand" href="{{site.baseurl}}/index.html">
+				{{site.title}}
 			</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="hidden-menu">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">About Me</a></li>
+        <li><a href="#">{{page.section1}}</a></li>
 				<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Portfolio<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{page.dropdown}}<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#rule1">BSA Service Project</a></li>
-            <li><a href="#rule1">Donut Project</a></li>
-            <li><a href="#rule1">Goblet Project</a></li>
+            <li><a href="#">{{page.dropdown1}}</a></li>
+            <li><a href="#">{{page.dropdown2}}</a></li>
+            <li><a href="#">{{page.dropdown3}}</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#rule1">Seminar Class Presentations</a></li>
+            <li><a href="#">{{page.dropdown4}}</a></li>
           </ul>
         </li>
-				<li><a href="#rule2">Contact</a></li>
-				<li><a href="/blog">Blog</a></li>
+				<li><a href="#">{{page.section2}}</a></li>
+				<li><a href="#">{{page.section3}}</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

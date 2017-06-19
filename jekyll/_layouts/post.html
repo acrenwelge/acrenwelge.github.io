@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{page.title}}</title>
+		<!-- My style sheet -->
+		<link rel="stylesheet" href="{{site.baseurl}}/css/main.css"/>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+<body>
+	{% include social.html %}
+	<div id="pg-container">
+	{% include header.html %}
+
+	<div class="row">
+		<div class="col-xl-12">
+			<div class="page-header">
+				<h1 class="text-center">{{page.title}}</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xl-12">
+			<div class="well well-lg" id="navigation">
+				{% if page.previous %}<span class="pull-left">
+					<a href="{{page.previous.path}}"><i class="glyphicon glyphicon-arrow-left"></i>&ensp;{{page.previous.title}}</a>
+				</span> {% endif %}
+				{% if page.next %}<span class="pull-right">
+					<a href="{{page.next.path}}">{{page.next.title}}&ensp;<i class="glyphicon glyphicon-arrow-right"></i></a>
+				</span> {% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xl-12">
+			{{content}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xl-12">
+			<div class="separator"></div>
+			<p>
+				Check out these related posts: {{ site.related_posts }}
+			</p>
+		</div>
+	</div>
+	{% include footer.html %}
+</div> <!-- end #pg-container -->
+
+<!-- Scripts - Codepen, jQuery, Bootstrap, and my own -->
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{{site.baseurl}}/main.js"></script>
+
+</body>
+</html>

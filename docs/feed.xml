@@ -1,14 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>Andrew's Coding Projects</title>
+    <description>My own blog which showcases all my coding/programming work
 </description>
-    <link>http://example.com/</link>
-    <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Jan 2017 20:13:06 -0600</pubDate>
-    <lastBuildDate>Sun, 22 Jan 2017 20:13:06 -0600</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 19 Jun 2017 08:04:15 -0700</pubDate>
+    <lastBuildDate>Mon, 19 Jun 2017 08:04:15 -0700</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Sudoku</title>
+        <description>&lt;p&gt;
+  This pen has been the hardest coding project for me yet! I got the idea of
+  writing a sudoku game that can generate a board and check the user's solution
+  after trying a hard sudoku problem while having lunch with my math professor, Dr. Yasskin.
+  &lt;!--end excerpt--&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  I began by writing the HTML and CSS to display the board, which is organized
+  into 3 horizontal rows which each contain 3 squares, which each contain 9 cells.
+  There is also a bar of numbers below the board which can be used to insert
+  numbers into the board.
+&lt;/p&gt;
+&lt;p&gt;
+  After the UI was built to my satisfaction, I started thinking about the board
+  generation code. I decided to represent the board as a 2D array (although
+  later I realized I could have simply used a 1D array). I generated the board
+  randomly by taking a solved board (it could be a very simple board, like
+  [1 2 3 ...etc]) and permuting the row groups, column groups, and the rows
+  and columns within each group. This jumbles the board but ensures it remains
+  valid. Then, I wrote a function to randomly mask 5 cells in each square.
+&lt;/p&gt;
+&lt;p&gt;
+  Now came the hard part: writing the board solver function. I actually ended
+  up writing two different solver functions, one as a brute force algorithm
+  and one as a &quot;smarter&quot; algorithm.
+&lt;/p&gt;
+&lt;p&gt;
+  The brute force method starts with a 1 in the first open cell and checks for
+  validity in ascending numerical order before moving onto the next open cell.
+  If no number is valid for the cell, it retreats to the previous cell and
+  increments the cell value. As you can imagine, this takes a long time for
+  certain board configurations, but at least it guarantees to find a solution
+  if one exists. The &quot;smarter&quot; algorithm uses essentially the same method, but
+  it first eliminates some of the solution board possibilities by checking the
+  adjacent row, square, and column cells for each cell.
+&lt;/p&gt;
+&lt;p&gt;
+  Finally, after many strenuous hours of debugging, my project was finished:
+&lt;/p&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;bqybpv&quot; data-default-tab=&quot;js,result&quot; data-user=&quot;acrenwelge&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Dynamic Sudoku&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;https://codepen.io/acrenwelge/pen/bqybpv/&quot;&gt;Dynamic Sudoku&lt;/a&gt; by Andrew (&lt;a href=&quot;https://codepen.io/acrenwelge&quot;&gt;@acrenwelge&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Apr 2017 11:00:00 -0700</pubDate>
+        <link>http://localhost:4000/game/2017/04/05/sudoku.html</link>
+        <guid isPermaLink="true">http://localhost:4000/game/2017/04/05/sudoku.html</guid>
+        
+        
+        <category>Game</category>
+        
+      </item>
+    
+      <item>
+        <title>Color Palette Generator</title>
+        <description>&lt;p&gt;
+  Well, I can't say that this palette generator pen is my original idea because
+  I got the design inspiration &lt;a href=&quot;http://coolors.co&quot; target=&quot;_blank&quot;&gt;from another palette generator website&lt;/a&gt;,
+  but I definitely coded it myself. There were several cool features about that
+  site that I wanted to emulate:
+  &lt;!--end excerpt--&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    5 colors vertically positioned across the screen
+  &lt;/li&gt;
+  &lt;li&gt;
+    Random generation with the click of a button
+  &lt;/li&gt;
+  &lt;li&gt;
+    Several themes to choose from (monochromatic, triad, etc)
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ability to adjust hue, saturation, etc
+  &lt;/li&gt;
+  &lt;li&gt;
+    Drag and drop colors around
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  So I used several JavaScript tools (&lt;a href=&quot;http://jscolor.com&quot;&gt;jscolor&lt;/a&gt;
+  for the color picker, &lt;a href=&quot;https://github.com/bgrins/TinyColor/&quot;&gt;tinycolor&lt;/a&gt;
+  for manipulation of the colors in JavaScript, and &lt;a href=&quot;http://jquery.com&quot;&gt;jquery&lt;/a&gt;
+  for drag-and-drop) to build a functional sort-of replica that I can now use for
+  picking a color scheme for future projects.
+&lt;/p&gt;
+&lt;p&gt;
+  I did add two extra features that I really like: the sliding bar on the right
+  side lets you use the buttons to adjust the color settings by any percentage
+  you want, and the animate button generates new colors every 2 seconds (but
+  that setting can be changed). Really awesome! :)
+&lt;/p&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;ZeqdZg&quot; data-default-tab=&quot;js,result&quot; data-user=&quot;acrenwelge&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Color Palette Generator&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;https://codepen.io/acrenwelge/pen/ZeqdZg/&quot;&gt;Color Palette Generator&lt;/a&gt; by Andrew (&lt;a href=&quot;https://codepen.io/acrenwelge&quot;&gt;@acrenwelge&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+</description>
+        <pubDate>Wed, 29 Mar 2017 09:42:10 -0700</pubDate>
+        <link>http://localhost:4000/codepen/2017/03/29/color-palette.html</link>
+        <guid isPermaLink="true">http://localhost:4000/codepen/2017/03/29/color-palette.html</guid>
+        
+        
+        <category>Codepen</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Loaders</title>
+        <description>&lt;p&gt;
+  I've always found CSS to be quite powerful for performing smooth animations
+  so after messing around with various &lt;code&gt;@keyframe&lt;/code&gt; animations on Codepen,
+  I thought I'd make some loader animations.
+  &lt;!--end excerpt--&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  First I tried a basic thin taurus with a quarter chunk of it colored in and
+  rolling around it. I added another quarter on the opposite side for the next
+  animation, and then half of the taurus for the third.
+&lt;/p&gt;
+&lt;p&gt;
+  Next, I experimented with animating three dots, floating up in order, fading in
+  and out, and circling around a point in various manners. A simple change of
+  the &lt;code&gt;animation-direction&lt;/code&gt; and &lt;code&gt;animation-timing-function&lt;/code&gt;
+  CSS properties changes each animation dramatically, and many different
+  animations can be shown by combinations of these properties.
+&lt;/p&gt;
+&lt;p&gt;
+  The last type of spinner was inspired by Google's chrome logo, with yellow,
+  red, green, and blue as four different layers of color. I especially enjoyed
+  the spinners where the layers merge and separate, creating a cool overlapping
+  effect.
+&lt;/p&gt;
+&lt;p data-height=&quot;550&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;vxYeQr&quot; data-preview=&quot;true&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;acrenwelge&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Loaders&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/acrenwelge/pen/vxYeQr/&quot;&gt;Loaders&lt;/a&gt; by Andrew (&lt;a href=&quot;http://codepen.io/acrenwelge&quot;&gt;@acrenwelge&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Feb 2017 10:12:10 -0800</pubDate>
+        <link>http://localhost:4000/codepen/css/2017/02/23/css-loaders.html</link>
+        <guid isPermaLink="true">http://localhost:4000/codepen/css/2017/02/23/css-loaders.html</guid>
+        
+        
+        <category>Codepen</category>
+        
+        <category>CSS</category>
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>
@@ -27,14 +174,55 @@
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 22 Jan 2017 17:42:10 -0600</pubDate>
-        <link>http://example.com/jekyll/update/2017/01/22/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://example.com/jekyll/update/2017/01/22/welcome-to-jekyll.html</guid>
+        <pubDate>Sun, 22 Jan 2017 15:42:10 -0800</pubDate>
+        <link>http://localhost:4000/jekyll/update/2017/01/22/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2017/01/22/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Pomodoro Clock</title>
+        <description>&lt;p&gt;
+  This pen began as a FreeCodeCamp project.
+  &lt;!--end excerpt--&gt;
+&lt;/p&gt;
+&lt;p data-height=&quot;550&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;dOqPrY&quot; data-preview=&quot;true&quot; data-default-tab=&quot;result&quot; data-user=&quot;acrenwelge&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Pomodoro Clock&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/acrenwelge/pen/dOqPrY/&quot;&gt;Pomodoro Clock&lt;/a&gt; by Andrew (&lt;a href=&quot;http://codepen.io/acrenwelge&quot;&gt;@acrenwelge&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Dec 2016 10:00:00 -0800</pubDate>
+        <link>http://localhost:4000/freecodecamp/2016/12/11/pomodoro-clock.html</link>
+        <guid isPermaLink="true">http://localhost:4000/freecodecamp/2016/12/11/pomodoro-clock.html</guid>
+        
+        
+        <category>FreeCodeCamp</category>
+        
+      </item>
+    
+      <item>
+        <title>JavaScript Calculator</title>
+        <description>&lt;p&gt;
+  This pen began as a FreeCodeCamp project.
+  &lt;!--end excerpt--&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  I began by constructing the UI...
+&lt;/p&gt;
+&lt;p data-height=&quot;550&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;dOjdqV&quot; data-preview=&quot;true&quot; data-default-tab=&quot;js,result&quot; data-user=&quot;acrenwelge&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;JS Super-Calculator&quot; class=&quot;codepen&quot;&gt;
+  See the Pen &lt;a href=&quot;http://codepen.io/acrenwelge/pen/dOjdqV/&quot;&gt;JS Super-Calculator&lt;/a&gt; by Andrew (&lt;a href=&quot;http://codepen.io/acrenwelge&quot;&gt;@acrenwelge&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.
+&lt;/p&gt;
+</description>
+        <pubDate>Sat, 10 Dec 2016 10:00:00 -0800</pubDate>
+        <link>http://localhost:4000/freecodecamp/2016/12/10/js-calculator.html</link>
+        <guid isPermaLink="true">http://localhost:4000/freecodecamp/2016/12/10/js-calculator.html</guid>
+        
+        
+        <category>FreeCodeCamp</category>
         
       </item>
     
