@@ -14,8 +14,8 @@
 
 <body>
 	{% include social.html %}
-	<div id="pg-container">
 	{% include header.html %}
+	<div id="pg-container" class="container">
 
 	<div class="row">
 		<div class="col-xl-12">
@@ -50,8 +50,14 @@
 			<p>
 				Check out these related posts:
 			</p>
+			<ul>
+				{% for post in site.related_posts %}
+					<li><a href="{{ post.path }}">{{ post.title | escape }}</a></li>
+				{% endfor %}
+			</ul>
 		</div>
 	</div>
+
 	{% include footer.html %}
 </div> <!-- end #pg-container -->
 

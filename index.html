@@ -22,9 +22,9 @@ title: "@acrenwelge Coding Blog"
 					<div class="separator"></div>
 			    <li>
 		        <h2>
-		          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+		          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
 		        </h2>
-						<em><span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></em>
+						<em>{{ post.date | date: "%b %-d, %Y" }}</em>
 						{{ post.excerpt }}
 			    </li>
 			  {% endfor %}

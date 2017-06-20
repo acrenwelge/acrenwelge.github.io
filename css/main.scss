@@ -14,6 +14,7 @@
 
 // Import partials
 @import "social.scss";
+@import "highlight.scss";
 
 // Our variables
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -21,20 +22,17 @@ $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
-
 $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
-
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    800px;
-
 $on-palm:          600px;
 $on-laptop:        800px;
 //
@@ -56,7 +54,6 @@ body {
 
 footer {
   width: 100%;
-  border-top: 1px solid $grey-color;
   padding-top: 10px;
   > div {
     background-color: #fff;
@@ -82,9 +79,10 @@ form {
 }
 
 .separator {
-  height: 2px;
-  background-color: $grey-color-light;
+  height: 1px;
+  background-color: $grey-color;
   border-radius: 2px;
+  margin: 10px auto;
 }
 
 .rule {

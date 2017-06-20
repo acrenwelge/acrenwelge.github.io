@@ -27,5 +27,6 @@ github_username:  acrenwelge
 # Build settings
 markdown: kramdown
 excerpt_separator: <!--end excerpt-->
+highlighter: rouge
 sass:
   sass_dir: _sass
