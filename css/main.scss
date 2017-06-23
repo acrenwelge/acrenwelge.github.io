@@ -36,9 +36,18 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 //
+$light-blue: #ACDCE5;
+$colombia-blue: #C5DCF7;
+
+$grad1: lighten(#56B4D3,40%);
+$grad2: lighten(#348F50,40%);
 
 body {
-  background-color: #fff; }
+  // background: $grad2;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(left, $grad1, $grad2);
+  // background: -o-linear-gradient(left, $grad1, $grad2);
+  // background: linear-gradient(to bottom right, $light-blue, $colombia-blue);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 #pg-container {
   max-width: 1000px;
@@ -55,9 +64,6 @@ body {
 footer {
   width: 100%;
   padding-top: 10px;
-  > div {
-    background-color: #fff;
-  }
   ul {
     display: inline-block;
     li {

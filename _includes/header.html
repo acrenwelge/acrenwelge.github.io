@@ -16,19 +16,25 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="hidden-menu">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">{{page.section1}}</a></li>
+        {% if page.layout == "post" %}
 				<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{page.dropdown}}<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Recent Posts<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">{{page.dropdown1}}</a></li>
-            <li><a href="#">{{page.dropdown2}}</a></li>
-            <li><a href="#">{{page.dropdown3}}</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">{{page.dropdown4}}</a></li>
+            {% for post in site.posts limit:5 %}
+    					<li><a href="{{ post.url | prepend: site.github.url }}">{{ post.title | escape }}</a></li>
+    				{% endfor %}
           </ul>
         </li>
-				<li><a href="#">{{page.section2}}</a></li>
-				<li><a href="#">{{page.section3}}</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Related Posts<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for post in site.related_posts limit:5 %}
+    					<li><a href="{{ post.url | prepend: site.github.url }}">{{ post.title | escape }}</a></li>
+    				{% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+      <li><a href="http://www.andrewcrenwelge.com/">Online Resume</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

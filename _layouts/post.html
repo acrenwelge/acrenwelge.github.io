@@ -26,13 +26,19 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xl-12">
+		<div class="col-lg-12">
+			<p>
+				<strong>Tags:</strong> <em>{{page.tags}}</em>
+			</p>
+			<p>
+				<strong>Categories:</strong> <em>{{page.categories}}</em>
+			</p>
 			<div class="well well-lg" id="navigation">
 				{% if page.previous %}<span class="pull-left">
-					<a href="{{page.previous.path}}"><i class="glyphicon glyphicon-arrow-left"></i>&ensp;{{page.previous.title}}</a>
+					<a href="{{ page.previous.url | prepend: site.github.url }}"><i class="glyphicon glyphicon-arrow-left"></i>&ensp;Previous: {{page.previous.title}}</a>
 				</span> {% endif %}
 				{% if page.next %}<span class="pull-right">
-					<a href="{{page.next.path}}">{{page.next.title}}&ensp;<i class="glyphicon glyphicon-arrow-right"></i></a>
+					<a href="{{ page.next.url | prepend: site.github.url }}">Next: {{page.next.title}}&ensp;<i class="glyphicon glyphicon-arrow-right"></i></a>
 				</span> {% endif %}
 			</div>
 		</div>
@@ -52,7 +58,7 @@
 			</p>
 			<ul>
 				{% for post in site.related_posts %}
-					<li><a href="{{ post.path }}">{{ post.title | escape }}</a></li>
+					<li><a href="{{ post.url | prepend: site.github.url }}">{{ post.title | escape }}</a></li>
 				{% endfor %}
 			</ul>
 		</div>
