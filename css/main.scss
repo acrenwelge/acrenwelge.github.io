@@ -43,25 +43,27 @@ $grad1: lighten(#56B4D3,40%);
 $grad2: lighten(#348F50,40%);
 
 body {
-  // background: $grad2;  /* fallback for old browsers */
-  // background: -webkit-linear-gradient(left, $grad1, $grad2);
-  // background: -o-linear-gradient(left, $grad1, $grad2);
-  // background: linear-gradient(to bottom right, $light-blue, $colombia-blue);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #pg-container {
-  max-width: 1000px;
-  margin: auto; }
+  max-width: 800px;
+  margin: auto;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+}
 
 #navigation * {
   position: relative;
-  bottom: 5px
+  bottom: 5px;
 }
 // header {
 //   width: 100%;
 //   z-index: 1; }
-
 footer {
+  @extend .smaller;
   width: 100%;
   padding-top: 10px;
   ul {
@@ -78,6 +80,9 @@ form {
 
 .bigger {
   font-size: 150%;
+}
+.smaller {
+  font-size: $small-font-size;
 }
 
 .no-style {

@@ -25,7 +25,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row smaller">
 		<div class="col-lg-12">
 			<p>
 				<strong>Tags:</strong> <em>{{page.tags}}</em>
@@ -47,20 +47,6 @@
 	<div class="row">
 	  <div class="col-xl-12">
 			{{content}}
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-xl-12">
-			<div class="separator"></div>
-			<p>
-				Check out these related posts:
-			</p>
-			<ul>
-				{% for post in site.related_posts %}
-					<li><a href="{{ post.url | prepend: site.github.url }}">{{ post.title | escape }}</a></li>
-				{% endfor %}
-			</ul>
 		</div>
 	</div>
 

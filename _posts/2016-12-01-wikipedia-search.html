@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Wikipedia Search Page"
+date:   2016-12-01 12:00:00 -0600
+categories: FreeCodeCamp
+tags: Bootstrap, Jquery
+---
+<p>
+  This was one of the first pages I built on codepen. The concept is simple - there is a
+  field for entering search terms and a search button to get the results. There is also
+  a "random article" button that will open a random Wikipedia page.
+  <!--end excerpt-->
+</p>
+<p>
+  Making the UI was simple - two button and a search field. I also added background
+  highlighting when hovering for the search results.
+</p>
+<p>
+  On the Javascript side, I used jQuery to store variables and open a simple AJAX
+  request to the Wikipedia API. Getting the query string from the input field was as simple as
+  <code>var $keywords = $('#query').get(0).value</code>. An ajax call is submitted with
+  jQuery's <code>$.ajax({...})</code>. In the "success" parameter of the object passed to
+  the ajax call, I wrote a callback function that gets all of the relevant data out of the JSON
+  object that is returned and displays them in a list below the search field. There is
+  even a snippet of each page as a preview displayed below the titles.
+</p>
+<p>
+  Implementing the random page button was even simpler. It's simply a link to
+  a URL on wikipedia that directs to a random page: "https://en.wikipedia.org/wiki/Special:Random".
+</p>
+<p data-height="500" data-theme-id="0" data-slug-hash="jVYNxY" data-default-tab="result" data-user="acrenwelge" data-embed-version="2" data-pen-title="Wikipedia Search" class="codepen">See the Pen <a href="https://codepen.io/acrenwelge/pen/jVYNxY/">Wikipedia Search</a> by Andrew (<a href="https://codepen.io/acrenwelge">@acrenwelge</a>) on <a href="https://codepen.io">CodePen</a>.</p>
