@@ -3,6 +3,7 @@ layout: post
 title:  "JavaScript Calculator"
 date:   2016-12-10 12:00:00 -0600
 categories: FreeCodeCamp
+tags: Calculator, Math, CSS
 ---
 This pen began as a FreeCodeCamp project. There were several user stories guiding the
 development of the calculator:

@@ -3,6 +3,7 @@ layout: post
 title:  "Color Palette Generator"
 date:   2017-03-29 10:42:10 -0600
 categories: Codepen
+tags: Javascript, jquery, jscolor, tinycolor
 ---
 Well, I can't say that this palette generator pen is my original idea because
 I got the design inspiration [from another palette generator website](http://coolors.co),
