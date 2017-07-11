@@ -28,10 +28,16 @@
 	<div class="row smaller">
 		<div class="col-lg-12">
 			<p>
-				<strong>Tags:</strong> <em>{{page.tags}}</em>
+				<strong>Tags:</strong>
+				{% for tag in page.tags %}
+					<em>{{tag}}{% unless forloop.rindex0 == 0 %},{% endunless %}</em>
+				{% endfor %}
 			</p>
 			<p>
-				<strong>Categories:</strong> <em>{{page.categories}}</em>
+				<strong>Categories:</strong>
+				{% for cat in page.categories %}
+					<em>{{cat}}{% unless forloop.rindex0 == 0 %},{% endunless %}</em>
+				{% endfor %}
 			</p>
 			<div class="well well-lg" id="navigation">
 				{% if page.previous %}<span class="pull-left">

@@ -3,7 +3,7 @@ layout: post
 title:  "Pomodoro Clock"
 date:   2016-12-11 12:00:00 -0600
 categories: FreeCodeCamp
-tags: Canvas, Javascript
+tags: Sass Canvas Javascript
 ---
 This pen began as a FreeCodeCamp project to build a Pomodoro Clock, which is a
 clock based on the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique).
@@ -12,10 +12,15 @@ are short breaks. My clock does all of that, and you can also adjust the interva
 After each interval, a sound plays to alert the user.
 <!--end excerpt-->
 
+## The HTML
 I wrote the HTML markup in three sections: one for the title and start/stop/reset buttons, one
-for the clock, and one for the clock settings below. I really had to fine-tune the CSS properties
-of each element to get the layout looking the way I wanted. I used CSS Flexbox on the
-top panel:
+for the clock, and one for the clock settings below.
+
+## The CSS
+I used Sass for this project and it really helped for nesting selectors so I didn't
+have to write a million different classes to get the look I wanted. I did have to
+fine-tune the CSS properties of each element to get the layout looking the way I wanted.
+I used CSS Flexbox on the top panel:
 {% highlight css %}
 .panel {
   display: flex;
@@ -28,6 +33,7 @@ I made the "+/-" buttons on the bottom settings panel be transparent with
 `background-color: transparent`. Also, `cursor: pointer` makes buttons seem more...
 buttony (is that even a word?) by making the mouse into a pointer when hovering.
 
+## The Javascript
 With the CSS and HTML out of the way, I started on coding the actual clock, making it tick,
 and providing interactivity with all the buttons. I began by initializing a few variables
 that can also be changed as configuration settings, like the clock radius, colors,
@@ -43,6 +49,7 @@ var wav = 'http://soundbible.com/grab.php?id=2154&type=mp3'; // sound file
 var audio = new Audio(wav);
 {% endhighlight %}
 
+### Working with the HTML5 Canvas API
 This is also one of my first projects to work on the HTML5 Canvas API, which lets
 us draw some cool things on the `<canvas>` element. First, we have
 to grab the DOM element with Javascript, get the context (2D in this case, since we
@@ -91,6 +98,7 @@ the variable `frac`, allowing the length of the arc to change with the
 variable. This will be important later. Also note how an if statement allows alternating
 between different colors, depending on whether the clock is on a session or a break.
 
+### Ticking the Clock
 Another function called "refresh" takes the time displayed on the clock and decreases
 the timer by one second. The time in seconds displayed is stored in the variable "start" and
 unless the timer is done, the time is decreased by a second, and the variable "frac"
@@ -115,6 +123,7 @@ function refresh() {
 }
 {% endhighlight %}
 
+### Converting the Time
 In the above code, two functions, `convertTime` and `convertToTime`, were invoked
 to convert the time on the clock in the form "MM:SS" to an integer representing
 the total seconds remaining (and vice versa). In the `convertTime` function,
@@ -150,6 +159,12 @@ There are several other functions, like `startClock`, `stopClock`, and `resetClo
 that are fairly straightforward and are triggered by clicking on the start, stop,
 and reset buttons.
 
+## What I Learned
+I really learned how to work comfortably with Canvas to do simple things like drawing
+shapes and curves, and also how to integrate it with the rest of my code so that
+functions like ticking the clock can affect animations on the screen (the arc going
+around the clock that shows the amount of time passed/remaining).
+
 <p data-height="550" data-theme-id="0" data-slug-hash="dOqPrY" data-preview="true" data-default-tab="result" data-user="acrenwelge" data-embed-version="2" data-pen-title="Pomodoro Clock" class="codepen">
-  See the Pen [Color Palette Generator](https://codepen.io/acrenwelge/pen/ZeqdZg/) by Andrew ([@acrenwelge](https://codepen.io/acrenwelge)) on [CodePen](https://codepen.io).
+  See the Pen [Color Palette Generator](https://codepen.io/acrenwelge/pen/dOqPrY/) by Andrew ([@acrenwelge](https://codepen.io/acrenwelge)) on [CodePen](https://codepen.io).
 </p>
