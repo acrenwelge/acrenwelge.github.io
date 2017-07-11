@@ -43,6 +43,9 @@ was done with the Javascript plugins, I used these functions to style the button
 I also used a media query `@media screen and (max-width: 730px) {...}` to hide some buttons
 and options on smaller screens.
 
+I also used an icon gallery called [Font Awesome](http://fontawesome.io) which added
+some visual flare to my buttons.
+
 ## The Javascript
 I used two Javascript libraries on this project:
 
@@ -81,7 +84,7 @@ function checkLightness(columnel,color) {
 
 ### Randomizing the Colors
 That's great! Now I can pick any color I want for each column. But what if I want
-to generate all random colors? Well, the first step is getting one random color:
+to generate all *random* colors? Well, the first step is getting one random color:
 {% highlight js %}
 function getRandColor(opts) {
   var rand1 = random(0,256);
@@ -153,7 +156,8 @@ function checkOptions(){
 Now that we have the `opts` object returned, we can pass it as a parameter to another
 function, `getColorCombos`, which uses the methods in tinycolor.js to get sets of
 colors (like analogous, monochromatic, or tetrad colors) given a starting color.
-*Note: I added the complement to the tetrad colors to get a full 5 colors.*
+
+*Note: I added the **complement** to the tetrad colors to get a full 5 colors.*
 {% highlight js %}
 function getColorCombos(opts) {
   var startColor = getRandColor(opts);
@@ -246,7 +250,7 @@ function onGbAdjBtnPress(command) {
 
 ### Dealing With Transparency
 Sometimes we'd like to adjust the transparency of a color. With a range input in
-the HTML markup, it's easy to specify.
+the HTML markup, it's easy to specify via a jQuery event binding:
 {% highlight js %}
 $(".tp-in").on('input', function(){
   var $col = $(this).closest('.col');
@@ -264,22 +268,83 @@ $(".tp-in").on('input', function(){
 });
 {% endhighlight %}
 
-### Manipulating Single Colors
+After the transparency is specified through the HTML `<input />` tag, the color's
+`alpha` value (the opposite of transparency) is set with `var alpha = 1 - tp` and
+then `currentColor.setAlpha(alpha)`. **Note: in my example, the input is scaled
+from 0 to 1000 for smooth scrolling on the input.**
+
+The column background is also updated just like last time, and the transparency
+slider and numerical percentage shown is also updated via a simple function:
 {% highlight js %}
-$(".rand-single").on('click', function(){
-  var $col = $(this).closest('.col');
-  var opts = checkOptions();
-  currentColor = getRandColor(opts);
-  var alpha = currentColor.getAlpha();
-  var tp = alphaToTp(alpha);
-  var tpin = $col.find(".tp-in");
-  var tpout = $col.find(".tp-out");
-  updateTransSlider(tp,tpin,tpout);
-  updatePicker($col,currentColor);
-  updateColBg($col,currentColor);
-  checkLightness($col,currentColor);
+function updateTransSlider(tp, tpInputEl, tpOutputEl) {
+  var output = Math.round(tp * 100)/100;
+  tpInputEl.val(tp*1000);
+  tpOutputEl.text(output);
+}
+{% endhighlight %}
+
+The color picker color is similarly updated:
+
+{% highlight js %}
+function updatePicker(columnEl, color) {
+  columnEl.find('.jscolor').val(color.toHexString());
+}
+{% endhighlight %}
+
+### Adjusting Colors Globally
+Let's say instead of randomizing all the colors, we want to adjust them via one of
+the top buttons (lighten, darken, etc). Remember the `onGbAdjBtnPress` function
+from before which used `performColorOp` to change the color? We simply bind the
+events now and pass in the command to perform:
+{% highlight js %}
+$(".lighten").click(function(){onGbAdjBtnPress("lighten")});
+$(".brighten").click(function(){onGbAdjBtnPress("brighten")});
+$(".darken").click(function(){onGbAdjBtnPress("darken")});
+$(".desaturate").click(function(){onGbAdjBtnPress("desaturate")});
+$(".saturate").click(function(){onGbAdjBtnPress("saturate")});
+$(".grayscale").click(function(){onGbAdjBtnPress("greyscale")});
+$(".spin").click(function(){onGbAdjBtnPress("spin")});
+$(".complement").click(function(){onGbAdjBtnPress("complement")});
+{% endhighlight %}
+
+### Manipulating Single Colors
+Binding an event to buttons on individual columns to randomize or manipulate a
+single color is simple and analogous to the global functions discussed above.
+
+### Animating Colors
+I added my own custom animation feature which displays new random colors every
+given interval (default `2s`).
+{% highlight js %}
+$(".animate").click(function(){
+  if (vars.animClicks == 0) {
+    vars.timer = setInterval(animate, vars.animSpeed);
+  }
+  vars.animClicks++;
+});
+$(".pause").click(function(){
+  vars.stop = clearInterval(vars.timer);
+  vars.animClicks = 0;
 });
 {% endhighlight %}
+
+### Sorting with jQuery UI
+I did some research on jQuery UI to see how to get things to drag and drop. It turns
+out the library is easy to use (just like jQuery) after importing it. I simply
+identified the containing element and used the `.sortable` like so:
+{% highlight js %}
+$(".container").sortable({
+  handle: '.move',
+  cancel: '' // override jquery-ui default
+});
+{% endhighlight %}
+*Note that `.move` is the element that is clickable for moving.*
+
+## What I Learned
+Wow, definitely a lot! I think this project turned out easier than I initially
+suspected, which is unusual. However, I did learn to work well with third party Javascript
+tools and integrate them with my code (including scrutinizing the documentation). I
+learned that adding features takes time, especially when it comes to working out all
+the bugs.
 
 <p data-height="800" data-theme-id="0" data-slug-hash="ZeqdZg" data-default-tab="result" data-user="acrenwelge" data-embed-version="2" data-pen-title="Color Palette Generator" class="codepen">
   See the Pen [Color Palette Generator](https://codepen.io/acrenwelge/pen/ZeqdZg/) by Andrew ([@acrenwelge](https://codepen.io/acrenwelge)) on [CodePen](https://codepen.io).
