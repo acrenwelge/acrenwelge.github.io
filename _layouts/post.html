@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-<body>
+<body class="post-pg">
 	{% include social.html %}
 	{% include header.html %}
 	<div id="pg-container" class="container">
@@ -28,15 +28,15 @@
 	<div class="row smaller">
 		<div class="col-lg-12">
 			<p>
-				<strong>Tags:</strong>
-				{% for tag in page.tags %}
-					<em>{{tag}}{% unless forloop.rindex0 == 0 %},{% endunless %}</em>
-				{% endfor %}
-			</p>
-			<p>
 				<strong>Categories:</strong>
 				{% for cat in page.categories %}
 					<em>{{cat}}{% unless forloop.rindex0 == 0 %},{% endunless %}</em>
+				{% endfor %}
+			</p>
+			<p>
+				<strong>Tags:</strong>
+				{% for tag in page.tags %}
+					<em>{{tag}}{% unless forloop.rindex0 == 0 %},{% endunless %}</em>
 				{% endfor %}
 			</p>
 			<div class="well well-lg" id="navigation">
@@ -50,8 +50,10 @@
 		</div>
 	</div>
 
+	<div class="separator"></div>
+
 	<div class="row">
-	  <div class="col-xl-12">
+	  <div class="col-lg-12">
 			{{content}}
 		</div>
 	</div>

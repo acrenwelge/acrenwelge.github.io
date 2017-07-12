@@ -5,9 +5,9 @@ date:   2017-03-29 10:42:10 -0600
 categories: Codepen
 tags: Font-awesome Sass Javascript jQuery jscolor tinycolor
 ---
-Well, I can't say that this palette generator pen is my original idea because
+Well, I can't say that this palette generator page is my original idea because
 I got the design inspiration [from another palette generator website](http://coolors.co),
-but I definitely coded it myself. There were several cool features about that
+but I definitely wrote my own code. There were several cool features about that
 site that I wanted to emulate:
 <!--end excerpt-->
 

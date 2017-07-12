@@ -17,7 +17,7 @@ API for user manipulation of the list.
 ## The CSS
 I used Sass to store some color variables, and getting the hamburger buttons right
 was all CSS:
-{% highlight css %}
+{% highlight scss %}
 .hamburger {
   display: inline-block;
   content: '';

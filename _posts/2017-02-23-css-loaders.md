@@ -3,7 +3,7 @@ layout: post
 title:  "CSS Loaders"
 date:   2017-02-23 12:12:10 -0600
 categories: Codepen
-tags: CSS Animation
+tags: Sass CSS Animation
 ---
 I've always found CSS to be quite powerful for performing smooth animations
 so after messing around with various `@keyframe` animations on Codepen,
