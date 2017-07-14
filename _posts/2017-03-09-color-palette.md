@@ -3,7 +3,7 @@ layout: post
 title:  "Color Palette Generator"
 date:   2017-03-29 10:42:10 -0600
 categories: Codepen
-tags: Font-awesome Sass Javascript jQuery jscolor tinycolor
+tags: Font-awesome Sass JavaScript jQuery jscolor tinycolor
 ---
 Well, I can't say that this palette generator page is my original idea because
 I got the design inspiration [from another palette generator website](http://coolors.co),
@@ -36,25 +36,25 @@ as a color picker by adding a class `jscolor` to the HTML markup on each column:
 set an arbitrary initial color using the hex code as shown above.
 
 ## The CSS
-Gosh I love Sass, and using it here really helped! Not only did I use Sass variables,
+Gosh I love [Sass](http://sass-lang.com), and using it here really helped! Not only did I use Sass variables,
 but I also utilized the built-in color functions: `darken()`, `lighten()`, `saturate()`,
 `invert()`, `grayscale()`, `adjust-hue()`, and `complement()`. Although color manipulation
-was done with the Javascript plugins, I used these functions to style the buttons nicely.
+was done with the JavaScript plugins, I used these functions to style the buttons nicely.
 I also used a media query `@media screen and (max-width: 730px) {...}` to hide some buttons
 and options on smaller screens.
 
 I also used an icon gallery called [Font Awesome](http://fontawesome.io) which added
 some visual flare to my buttons.
 
-## The Javascript
-I used two Javascript libraries on this project:
+## The JavaScript
+I used two JavaScript libraries on this project:
 
 * jscolor, for a color picker
 * tinycolor, for performing operations on colors (lighten, darken, etc)
 
 ### Color Picker
 First I wanted to be able to change the color of any column with the color picker.
-The Javascript code for this is quite simple, actually:
+The JavaScript code for this is quite simple, actually:
 {% highlight js %}
 $(".jscolor").on('change', function(){
   var pickerColor = tinycolor($(this).val());
@@ -231,7 +231,7 @@ function performColorOp(color,operation, adj) {
 }
 {% endhighlight %}
 
-Now that we can modify a color in Javascript, we can write a function to adjust all
+Now that we can modify a color in JavaScript, we can write a function to adjust all
 displayed colors with a given command. We again use a `for` loop and then get a
 `var newcolor` inside the loop by calling `performColorOp`:
 {% highlight js %}
@@ -341,7 +341,7 @@ $(".container").sortable({
 
 ## What I Learned
 Wow, definitely a lot! I think this project turned out easier than I initially
-suspected, which is unusual. However, I did learn to work well with third party Javascript
+suspected, which is unusual. However, I did learn to work well with third party JavaScript
 tools and integrate them with my code (including scrutinizing the documentation). I
 learned that adding features takes time, especially when it comes to working out all
 the bugs.

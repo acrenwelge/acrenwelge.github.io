@@ -5,9 +5,9 @@ date:   2016-12-01 12:00:00 -0600
 categories: FreeCodeCamp
 tags: Bootstrap jQuery
 ---
-This was one of the first pages I built on codepen. The concept is simple - there is a
-field for entering search terms and a search button to get the results. There is also
-a "random article" button that will open a random Wikipedia page.
+This was one of the first pages I built on [Codepen](http://codepen.io). The concept
+is simple - there is a field for entering search terms and a search button to get
+the results. There is also a "random article" button that will open a random Wikipedia page.
 <!--end excerpt-->
 
 ## The HTML
@@ -18,8 +18,8 @@ The CSS was basic - I just used Bootstrap to make it look nice, then added some
 styling to make it look nice. I also added background highlighting when hovering
 for the search results.
 
-## The Javascript
-On the Javascript side, I used jQuery to store variables and open a simple AJAX
+## The JavaScript
+On the JavaScript side, I used jQuery to store variables and open a simple AJAX
 request to the Wikipedia API. Getting the query string from the input field was as simple as
 `var $keywords = $('#query').get(0).value`. An ajax call is submitted with
 jQuery's `$.ajax({...})`. In the "success" parameter of the object passed to

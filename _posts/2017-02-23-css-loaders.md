@@ -16,7 +16,7 @@ I made a `<div class="box">` as a container for each animation. Within each box,
 for markup, and all animation is done with CSS.
 
 ## The CSS
-This is where the fun really happens on this pen! I used Sass to set a ton of variables
+This is where the fun really happens on this pen! I used [Sass](http://sass-lang.com) to set a ton of variables
 which act as configuration settings, so they can be changed for different effects.
 For example, changing the `$speed` variable changes the animation speed of all the
 spinners. Also, I created many `@keyframe` animations and reused some on several different

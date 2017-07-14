@@ -3,9 +3,9 @@ layout: post
 title:  "Pomodoro Clock"
 date:   2016-12-11 12:00:00 -0600
 categories: FreeCodeCamp
-tags: Sass Canvas Javascript
+tags: Sass Canvas JavaScript
 ---
-This pen began as a FreeCodeCamp project to build a Pomodoro Clock, which is a
+This pen began as a [FreeCodeCamp](http://FreeCodeCamp.com) project to build a Pomodoro Clock, which is a
 clock based on the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique).
 The clock breaks work into intervals, typically 25 minutes long, and in between there
 are short breaks. My clock does all of that, and you can also adjust the intervals.
@@ -33,7 +33,7 @@ I made the "+/-" buttons on the bottom settings panel be transparent with
 `background-color: transparent`. Also, `cursor: pointer` makes buttons seem more...
 buttony (is that even a word?) by making the mouse into a pointer when hovering.
 
-## The Javascript
+## The JavaScript
 With the CSS and HTML out of the way, I started on coding the actual clock, making it tick,
 and providing interactivity with all the buttons. I began by initializing a few variables
 that can also be changed as configuration settings, like the clock radius, colors,
@@ -52,7 +52,7 @@ var audio = new Audio(wav);
 ### Working with the HTML5 Canvas API
 This is also one of my first projects to work on the HTML5 Canvas API, which lets
 us draw some cool things on the `<canvas>` element. First, we have
-to grab the DOM element with Javascript, get the context (2D in this case, since we
+to grab the DOM element with JavaScript, get the context (2D in this case, since we
 want to draw a flat object), and set the height and width of the canvas (this defines
 the window in which we'll draw the clock):
 {% highlight js %}

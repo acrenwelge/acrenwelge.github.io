@@ -3,7 +3,7 @@ layout: post
 title:  "GetItDone: A To-Do List"
 date:   2017-01-22 17:42:10 -0600
 categories: Codepen
-tags: Sass Javascript jQuery-ui Mustache
+tags: Sass JavaScript jQuery-ui Mustache
 ---
 I created a simple to-do list application which allows creating new tasks,
 checking off and deleting completed tasks, and re-organizing the list any way
@@ -11,11 +11,11 @@ the user would like.
 <!--end excerpt-->
 
 ## The HTML
-I used Mustache for templating and rendering the data, and jQueryUI provided an
-API for user manipulation of the list.
+I used [Mustache](http://mustache.github.io/) for templating and rendering the data,
+and [jQueryUI](http://jqueryui.com) provided an API for user manipulation of the list.
 
 ## The CSS
-I used Sass to store some color variables, and getting the hamburger buttons right
+I used [Sass](http://sass-lang.com) to store some color variables, and getting the hamburger buttons right
 was all CSS:
 {% highlight scss %}
 .hamburger {
@@ -36,7 +36,7 @@ was all CSS:
 {% endhighlight %}
 Using "Montserrat" as the font gave the list a nice look, too.
 
-## The Javascript
+## The JavaScript
 I began with a few tasks pre-loaded in my `data` variable, `$template` and `$target`
 jQuery object variables for Mustache to render, and an `itemIndex` variable for
 keeping track of the current item.
@@ -111,7 +111,7 @@ I didn't have to add the new item to the DOM directly in my function, I just let
 ## What I Learned
 Templating engines like Mustache.js really help when you want to abstract away something
 like iterating through some data and displaying it. What I had to keep clear in my mind
-when working on this app, though, was that the DOM and the Javascript `data` variable
+when working on this app, though, was that the DOM and the JavaScript `data` variable
 are two separate entities. I always made sure that `data` contained the correct information
 whenever an action occurred (like updating a list item). Then, it's easy to simply call
 the `render()` method and update the DOM.

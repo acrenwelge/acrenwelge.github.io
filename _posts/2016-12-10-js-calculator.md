@@ -5,8 +5,8 @@ date:   2016-12-10 12:00:00 -0600
 categories: FreeCodeCamp
 tags: Calculator Math CSS
 ---
-This pen began as a FreeCodeCamp project. There were several user stories guiding the
-development of the calculator:
+This pen began as a [FreeCodeCamp](http://FreeCodeCamp.com) project. There were
+several user stories guiding the development of the calculator:
 <!--end excerpt-->
 
 - I can add, subtract, multiply and divide two numbers.
@@ -14,10 +14,10 @@ development of the calculator:
 - I can chain mathematical operations together until I hit the equal button, and the calculator will tell me the correct output
 
 ## The HTML
-I used Bootstrap as a foundation for my layout and put all my markup inside a `.container`.
-I then gave my calculator a title: `<h1>JS Super Calculator</h1>` and then put the
-display inside `<div class="display">` and the keyboard inside... you guessed it,
-`<div class="keyboard">`. Pretty simple.
+I used [Bootstrap](http://getbootstrap.com) as a foundation for my layout and put
+all my markup inside a `.container`. I then gave my calculator a title: `<h1>JS Super Calculator</h1>`
+and then put the display inside `<div class="display">` and the keyboard inside...
+you guessed it, `<div class="keyboard">`. Pretty simple.
 
 ## The CSS
 I began by constructing the UI to make the calculator mainly white with a black
@@ -27,8 +27,8 @@ larger than the rest. I had to use rows to lay out the keyboard and use
 `display: flex; justify-content: space-between;` to align the spaces
 properly. Then I used `position: relative` to adjust the bigger buttons individually.
 
-## The Javascript
-With the layout out of the way, I started on the Javascript code. I started by
+## The JavaScript
+With the layout out of the way, I started on the JavaScript code. I started by
 creating variables for the current entry and operator, the current expression (to be displayed)
 below the entry, and the previous entry and operator (to keep chaining operations).
 The first and easiest task was to write a function `operate` that takes a first
@@ -86,5 +86,5 @@ different scenarios to consider, especially when including chaining mathematical
 functions together.
 
 <p data-height="600" data-theme-id="0" data-slug-hash="dOjdqV" data-preview="true" data-default-tab="js,result" data-user="acrenwelge" data-embed-version="2" data-pen-title="JS Super-Calculator" class="codepen">
-  See the Pen [Javascript Calculator](https://codepen.io/acrenwelge/pen/dOjdqV/) by Andrew ([@acrenwelge](https://codepen.io/acrenwelge)) on [CodePen](https://codepen.io).
+  See the Pen [JavaScript Calculator](https://codepen.io/acrenwelge/pen/dOjdqV/) by Andrew ([@acrenwelge](https://codepen.io/acrenwelge)) on [CodePen](https://codepen.io).
 </p>
