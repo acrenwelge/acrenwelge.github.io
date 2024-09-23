@@ -66,3 +66,4 @@ def recover(self, words, bip32_passphrase="", encryption_password=""):
 You might notice a reference to "BIP"s in the comments. BIP-39 is a Bitcoin Improvement Proposal that defines a standard for mnemonic codes for generating deterministic keys. The wallet uses a BIP-39 compliant library to generate and recover seed phrases.
 
 BIP-32 defines a standard for *hierarchical, deterministic* wallets. Basically this means that you can use one key (the root key) to derive others in a tree-like structure. BIP-32 specifies which levels of the tree are used for different purposes, such as for different cryptocurrencies or for different accounts within a wallet. Using BIP-32, the wallet can generate a new address for each transaction without needing to back up the wallet each time.
+
